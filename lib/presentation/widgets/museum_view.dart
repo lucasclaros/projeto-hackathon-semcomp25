@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_semcomp/data/helpers.dart';
+import 'package:hackathon_semcomp/data/models/museum_model.dart';
 
 class MuseumView extends StatelessWidget {
-  const MuseumView({super.key});
+  const MuseumView({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +16,7 @@ class MuseumView extends StatelessWidget {
         backgroundColor: const Color(0xff112776),
       ),
       body: ListView.builder(
-          itemCount: 10,
+          itemCount: museums.length,
           itemBuilder: (context, index) {
             return Card(
               elevation: 5,
@@ -20,11 +24,21 @@ class MuseumView extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      Image.asset(
-                        'assets/craque.jpeg',
-                        fit: BoxFit.cover,
+                      SizedBox(
                         height: 150,
-                        width: MediaQuery.of(context).size.width,
+                        child: index == 0
+                            ? Image.asset(
+                                museums[index].imageUrl,
+                                fit: BoxFit.cover,
+                                height: 150,
+                                width: MediaQuery.of(context).size.width,
+                              )
+                            : Image.network(
+                                museums[index].imageUrl,
+                                height: 150,
+                                fit: BoxFit.cover,
+                                width: MediaQuery.of(context).size.width,
+                              ),
                       ),
                       Positioned(
                         bottom: 0,
@@ -40,13 +54,14 @@ class MuseumView extends StatelessWidget {
                               Colors.transparent,
                             ]),
                           ),
-                          child: const Align(
+                          child: Align(
                             alignment: Alignment.topLeft,
                             child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 12.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 12.0),
                               child: Text(
-                                'Phyno da bola',
-                                style: TextStyle(
+                                museums[index].title,
+                                style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 30,
                                 ),
@@ -76,22 +91,33 @@ class MuseumView extends StatelessWidget {
                         Row(
                           children: [
                             Row(
-                              children: const [
-                                Icon(Icons.location_on),
-                                SizedBox(
+                              children: [
+                                const Icon(Icons.location_on),
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text('Avendia São Carlos - 450'),
+                                SizedBox(
+                                  width: 220,
+                                  child: Text(
+                                    museums[index]
+                                        .address
+                                        .replaceAll("", "\u{200B}"),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
                               ],
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Row(
-                              children: const [
-                                Icon(Icons.calendar_month),
-                                SizedBox(
+                              children: [
+                                const Icon(Icons.calendar_month),
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text('8h - 18h'),
+                                Text(
+                                  museums[index].oppeningTime,
+                                  overflow: TextOverflow.ellipsis,
+                                )
                               ],
                             ),
                           ],
@@ -101,7 +127,7 @@ class MuseumView extends StatelessWidget {
                         ),
                         Expanded(
                           child: Text(
-                            'Exercitation ad eu nostrud qui qui voluptate voluptate. Magna culpa commodo enim incididunt labore ex proident tempor dolor esse Lorem nostrud. Pariatur laboris adipisicing culpa nulla proident consectetur.',
+                            museums[index].description,
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(color: Colors.grey[600]),

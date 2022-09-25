@@ -81,7 +81,7 @@ class _ListMissionsItemState extends State<ListMissionsItem> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 '${widget.mission.points.toString().padRight(2)} pontos',
-                style: TextStyle(fontSize: 13),
+                style: const TextStyle(fontSize: 13),
               ),
             ),
           ),

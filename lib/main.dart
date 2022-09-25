@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hackathon_semcomp/presentation/widgets/drawer_item.dart';
@@ -21,13 +20,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Home'),
+      home: const MyHomePage(title: 'Home'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -57,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
             icon: const Icon(Icons.person),
           ),
         ],
-        backgroundColor: const Color(0xff112776),
+        backgroundColor: const Color(0xff2446ae),
       ),
       drawer: Drawer(
         child: Column(
@@ -116,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 function: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const MuseumView()),
+                    MaterialPageRoute(builder: (context) => MuseumView()),
                   );
                 }),
             Divider(color: Colors.grey[500]),

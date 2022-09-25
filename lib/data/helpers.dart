@@ -1,4 +1,5 @@
 import 'package:hackathon_semcomp/data/models/mission_model.dart';
+import 'package:hackathon_semcomp/data/models/museum_model.dart';
 import 'package:hackathon_semcomp/data/models/news_model.dart';
 
 final news = [
@@ -114,5 +115,34 @@ final missions = [
         'O Sesc tem o orgulho de retomar um dos mais tradicionas torneios da região!',
     isCompleted: false,
     points: 100,
+  ),
+];
+
+final museums = [
+  MuseumModel(
+    title: 'World Rugby Museum',
+    address: 'Rua Mauro Pinheiro 150, Vila Ferroviário - Araraquara/SP',
+    oppeningTime: '9h - 12h',
+    description:
+        'O premiado World Rugby Museum é o lar definitivo para tudo e qualquer coisa sobre rugby. Abrigando a coleção de recordações de rugby mais prestigiada do mundo e oferecendo passeios memoráveis ​​ao icônico Twickenham Stadium.',
+    imageUrl: 'assets/museu_rugby.jpeg',
+  ),
+  MuseumModel(
+    title: 'Museu do Futebol',
+    address: 'Praça Charles Miller, s/n - Pacaembu, São Paulo - SP',
+    oppeningTime: '9h - 17h',
+    imageUrl:
+        'https://vejasp.abril.com.br/wp-content/uploads/2017/01/37271_museu-do-futebol.jpeg',
+    description:
+        'O Museu do Futebol é um espaço na cidade de São Paulo dedicado aos mais diversos assuntos que envolvem a prática, a história e as curiosidades que giram em torno do futebol no Brasil e no mundo.',
+  ),
+  MuseumModel(
+    title: 'Roland Garros Museum',
+    address: 'Paris - França',
+    oppeningTime: '10h - 18h',
+    imageUrl:
+        'http://f.i.uol.com.br/fotografia/2015/05/20/513324-970x600-1.jpeg',
+    description:
+        'O estádio Roland-Garros é conhecido por abrigar importantes torneios de tênis, porém o local também abriga um museu super interessante sobre a história do tênis francês. Com mais de 2000 m² dedicados ao tênis.',
   ),
 ];

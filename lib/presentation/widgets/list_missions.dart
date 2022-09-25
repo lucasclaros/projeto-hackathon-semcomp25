@@ -41,7 +41,7 @@ class _ListNewsState extends State<ListMissions>
             height: 20,
             child: LinearProgressIndicator(
               value: progress,
-              color: Colors.red,
+              color: const Color(0xff02fe45),
             ),
           )
         ],

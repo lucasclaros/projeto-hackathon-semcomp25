@@ -1,1 +1,0 @@
-# projeto-hackathon-semcomp25

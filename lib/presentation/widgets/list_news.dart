@@ -11,7 +11,8 @@ class ListNews extends StatefulWidget {
   State<ListNews> createState() => _ListNewsState();
 }
 
-class _ListNewsState extends State<ListNews> {
+class _ListNewsState extends State<ListNews>
+    with AutomaticKeepAliveClientMixin<ListNews> {
   @override
   void initState() {
     super.initState();
@@ -58,4 +59,7 @@ class _ListNewsState extends State<ListNews> {
       itemCount: news.length,
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

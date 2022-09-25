@@ -1,3 +1,4 @@
+import 'package:hackathon_semcomp/data/models/mission_model.dart';
 import 'package:hackathon_semcomp/data/models/news_model.dart';
 
 final news = [
@@ -79,4 +80,29 @@ final news = [
     thumbnail:
         'https://bolavip.com/export/sites/bolavip/img/2021/07/26/gettyimages-1330342482.jpg_231334169.jpg',
   ),
+];
+
+final missions = [
+  MissionModel(
+      title: 'Vá para o Museu do Futebol.',
+      description: 'Conheça e explore um dos museus mais visitados do país!',
+      isCompleted: false),
+  MissionModel(
+      title: 'Compartilhe o evento "Paz no Estádios" para 5 amigos.',
+      description: 'Quanto mais pessoas souberem, melhor o futebol fica!',
+      isCompleted: false),
+  MissionModel(
+      title: 'Responda nosso Quiz Semanal.',
+      description:
+          'Com o nosso Quiz você pode acumular pontos e trocar por uma variedade de vantagens em nossa plataforma!',
+      isCompleted: false),
+  MissionModel(
+      title: 'Assista a partida Loud vs Pain pela final do CBLOL 2022',
+      description: 'O evento começará às 13h do dia 03/09!',
+      isCompleted: false),
+  MissionModel(
+      title: 'Inscreva-se para o torneio de Tênis do Sesc',
+      description:
+          'O Sesc tem o orgulho de retomar um dos mais tradicionas torneios da região!',
+      isCompleted: false),
 ];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_semcomp/presentation/widgets/list_missions.dart';
 import 'package:hackathon_semcomp/presentation/widgets/list_news.dart';
 
 void main() {
@@ -16,15 +17,28 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Home'),
+      home: MyHomePage(title: 'Home'),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final pageController = PageController();
+  int pageIndex = 0;
+
+  final pages = const [
+    ListNews(),
+    ListMissions(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +60,23 @@ class MyHomePage extends StatelessWidget {
           children: const [],
         ),
       ),
-      body: const ListNews(),
+      body: PageView(
+        controller: pageController,
+        onPageChanged: (newIndex) {
+          setState(() {
+            pageIndex = newIndex;
+          });
+        },
+        children: pages,
+      ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: pageIndex,
+        onTap: (newIndex) {
+          pageController.jumpToPage(newIndex);
+          setState(() {
+            pageIndex = newIndex;
+          });
+        },
         backgroundColor: const Color(0xff009c3b),
         selectedItemColor: const Color(0xffffdf00),
         unselectedItemColor: Colors.white,

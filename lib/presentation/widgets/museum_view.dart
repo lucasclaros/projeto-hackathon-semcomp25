@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_semcomp/data/helpers.dart';
-import 'package:hackathon_semcomp/data/models/museum_model.dart';
 
 class MuseumView extends StatelessWidget {
   const MuseumView({

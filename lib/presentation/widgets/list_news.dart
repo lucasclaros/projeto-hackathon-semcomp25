@@ -22,11 +22,11 @@ class _ListNewsState extends State<ListNews>
         builder: (context) => AlertDialog(
           backgroundColor: Colors.blue[300],
           title: const Text(
-            'Bem vindo de volta {usuário}!',
+            'Bem vindo de volta Lucas!',
             style: TextStyle(color: Colors.white),
           ),
           content: const Text(
-            'Fique por dentro das notícias do mundo do {esporte} enquanto esteve fora.',
+            'Fique por dentro das notícias do mundo do tênis de mesa enquanto esteve fora.',
             style: TextStyle(
               color: Colors.white,
             ),

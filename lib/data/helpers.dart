@@ -84,25 +84,35 @@ final news = [
 
 final missions = [
   MissionModel(
-      title: 'Vá para o Museu do Futebol.',
-      description: 'Conheça e explore um dos museus mais visitados do país!',
-      isCompleted: false),
+    title: 'Vá para o Museu do Futebol.',
+    description: 'Conheça e explore um dos museus mais visitados do país!',
+    isCompleted: false,
+    points: 10,
+  ),
   MissionModel(
-      title: 'Compartilhe o evento "Paz no Estádios" para 5 amigos.',
-      description: 'Quanto mais pessoas souberem, melhor o futebol fica!',
-      isCompleted: false),
+    title: 'Compartilhe o evento "Paz no Estádios" para 5 amigos.',
+    description: 'Quanto mais pessoas souberem, melhor o futebol fica!',
+    isCompleted: false,
+    points: 5,
+  ),
   MissionModel(
-      title: 'Responda nosso Quiz Semanal.',
-      description:
-          'Com o nosso Quiz você pode acumular pontos e trocar por uma variedade de vantagens em nossa plataforma!',
-      isCompleted: false),
+    title: 'Responda nosso Quiz Semanal.',
+    description:
+        'Com o nosso Quiz você pode acumular pontos e trocar por uma variedade de vantagens em nossa plataforma!',
+    isCompleted: false,
+    points: 15,
+  ),
   MissionModel(
-      title: 'Assista a partida Loud vs Pain pela final do CBLOL 2022',
-      description: 'O evento começará às 13h do dia 03/09!',
-      isCompleted: false),
+    title: 'Assista a partida Loud vs Pain pela final do CBLOL 2022',
+    description: 'O evento começará às 13h do dia 03/09!',
+    isCompleted: false,
+    points: 50,
+  ),
   MissionModel(
-      title: 'Inscreva-se para o torneio de Tênis do Sesc',
-      description:
-          'O Sesc tem o orgulho de retomar um dos mais tradicionas torneios da região!',
-      isCompleted: false),
+    title: 'Inscreva-se para o torneio de Tênis do Sesc',
+    description:
+        'O Sesc tem o orgulho de retomar um dos mais tradicionas torneios da região!',
+    isCompleted: false,
+    points: 100,
+  ),
 ];
